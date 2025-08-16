@@ -1,0 +1,6 @@
+body { margin: 0; }
+.sidebar { width: 240px; min-height: 100vh; }
+.sidebar .nav-link { text-decoration: none; }
+.content { flex: 1; }
+.card { border-radius: 12px; }
+.table th, .table td { vertical-align: middle; }

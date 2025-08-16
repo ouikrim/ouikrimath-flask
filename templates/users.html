@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="mb-3">Gestion des utilisateurs</h2>
+
+<form method="POST" action="{{ url_for('main.add_user') }}" class="row g-2 mb-4">
+  <div class="col-md-3"><input type="text" name="username" class="form-control" placeholder="Nom d'utilisateur" required></div>
+  <div class="col-md-3"><input type="password" name="password" class="form-control" placeholder="Mot de passe" required></div>
+  <div class="col-md-3">
+    <select name="role" class="form-select">
+      <option value="user">Utilisateur</option>
+      <option value="admin">Admin</option>
+    </select>
+  </div>
+  <div class="col-md-3"><button class="btn btn-success w-100" type="submit">Ajouter</button></div>
+</form>
+
+<table class="table table-striped table-hover align-middle">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nom</th>
+      <th>Rôle</th>
+      <th style="width: 160px;">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for u in users %}
+    <tr>
+      <td>{{ u.id }}</td>
+      <td>{{ u.username }}</td>
+      <td>{{ u.role }}</td>
+      <td>
+        {% if u.username != 'admin' %}
+        <a class="btn btn-sm btn-danger" href="{{ url_for('main.delete_user', user_id=u.id) }}"
+           onclick="return confirm('Supprimer cet utilisateur ?');">Supprimer</a>
+        {% else %}
+        —
+        {% endif %}
+      </td>
+    </tr>
+    {% else %}
+    <tr><td colspan="4" class="text-center">Aucun utilisateur.</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
