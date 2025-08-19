@@ -1,0 +1,21 @@
+# Environnements virtuels
+venv/
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Fichiers système macOS
+.DS_Store
+.AppleDouble
+.Trashes
+
+# Logs
+*.log
+
+# Configs locales
+.env
+
