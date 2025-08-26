@@ -18,4 +18,6 @@ __pycache__/
 
 # Configs locales
 .env
+instance/app.db
+uploads/
 
