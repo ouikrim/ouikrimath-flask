@@ -21,3 +21,9 @@ __pycache__/
 instance/app.db
 uploads/
 
+uploads/
+instance/app.db
+__pycache__/
+*.pyc
+venv/
+.venv/
