@@ -1,24 +1,25 @@
-# Environnements virtuels
-venv/
+# MacOS
+.DS_Store
+
+# Virtual environment
 .venv/
+venv/
+
+# SQLite database
+instance/app.db
+
+# Uploads temporaires
+uploads/
 
 # Python cache
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
+*.py[cod]
 
-# Fichiers système macOS
-.DS_Store
-.AppleDouble
-.Trashes
+# IDEs
+.vscode/
+*.swp
 
-# Logs
-*.log
 
-# Configs locales
-.env
-instance/app.db#
 
 
 
